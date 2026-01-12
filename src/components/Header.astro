@@ -1,0 +1,129 @@
+---
+// Header.astro
+import { Menu, X, Globe } from 'lucide-astro';
+import { useTranslations, useTranslatedPath } from '../i18n/utils';
+
+export interface Props {
+  lang: 'en' | 'id';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const navLinks = [
+  { name: t('nav.home'), href: translatePath('/') },
+  { name: t('nav.projects'), href: translatePath('/projects') },
+  { name: t('nav.contact'), href: translatePath('/contact') },
+];
+
+const currentPath = Astro.url.pathname;
+let switchPath = '';
+
+if (lang === 'en') {
+  switchPath = currentPath === '/' ? '/id' : `/id${currentPath}`;
+} else {
+  switchPath = currentPath.replace(/^\/id/, '') || '/';
+}
+---
+
+<header class="py-0 fixed top-0 w-full z-50 bg-[#050505] border-b-[3px] border-white">
+  <div class="w-full flex justify-between items-stretch h-20">
+    <!-- Brand (Left Block) -->
+    <div class="z-50 flex items-center px-6 md:px-12 border-r-[3px] border-white bg-[#050505] hover:bg-[#69de10] transition-colors group">
+      <a href={translatePath('/')} class="font-display text-2xl md:text-3xl font-black tracking-tighter uppercase group-hover:text-black transition-colors">
+        Bang_syaii<span class="text-[#69de10] group-hover:text-white">.</span>
+      </a>
+    </div>
+
+    <!-- Desktop Nav (Right Block) -->
+    <nav class="hidden md:flex items-stretch">
+      <ul class="flex h-full">
+        {navLinks.map((link) => (
+          <li key={link.href} class="h-full border-l-[3px] border-white">
+            <a
+              href={link.href}
+              class={`flex items-center justify-center h-full px-8 font-mono text-sm font-bold uppercase hover:bg-white hover:text-black transition-colors ${Astro.url.pathname === link.href ? 'bg-white text-black' : ''}`}
+            >
+              {link.name}
+            </a>
+          </li>
+        ))}
+        <!-- Lang Switcher Desktop -->
+        <li class="h-full border-l-[3px] border-white">
+           <a href={switchPath} class="flex items-center justify-center h-full px-6 font-mono text-sm font-bold uppercase bg-[#1a1a1a] hover:bg-[#69de10] hover:text-black transition-colors">
+             {lang === 'en' ? 'ID' : 'EN'}
+           </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Button (Square) -->
+    <button id="menu-toggle" class="md:hidden z-50 w-20 h-20 flex items-center justify-center bg-white text-black border-l-[3px] border-white hover:bg-[#69de10] hover:text-black transition-colors" aria-label="Toggle Menu">
+      <Menu id="menu-icon" class="w-8 h-8" />
+      <X id="close-icon" class="w-8 h-8 hidden" />
+    </button>
+
+    <!-- Mobile Nav Dropdown (Solid Drawer) -->
+    <nav id="mobile-menu" class="absolute top-full left-0 w-full bg-[#050505] border-b-[3px] border-white z-40 opacity-0 invisible pointer-events-none transition-all duration-300 origin-top">
+      <ul class="flex flex-col w-full divide-y-[3px] divide-white">
+        {navLinks.map((link, index) => (
+          <li key={link.href}>
+            <a
+              href={link.href}
+              class="block py-6 px-6 font-display font-black text-4xl uppercase hover:bg-[#69de10] hover:text-black hover:pl-10 transition-all duration-200 flex justify-between items-center group"
+              onclick="document.getElementById('menu-toggle').click()"
+            >
+              <span>{link.name}</span>
+              <span class="text-base font-mono border-[2px] border-white px-2 group-hover:border-black">0{index + 1}</span>
+            </a>
+          </li>
+        ))}
+        <!-- Lang Switcher Mobile -->
+        <li>
+          <a href={switchPath} class="block py-6 px-6 font-mono font-bold text-xl uppercase bg-[#1a1a1a] text-white hover:bg-[#69de10] hover:text-black transition-colors text-center">
+            SWITCH TO {lang === 'en' ? 'INDONESIA' : 'ENGLISH'}
+          </a>
+        </li>
+      </ul>
+      
+      <!-- Mobile Socials Bar -->
+      <div class="bg-white text-black p-4 flex flex-wrap justify-between gap-4 font-mono text-sm font-black uppercase">
+         <a href="https://github.com/LT-SYAII" target="_blank" class="hover:bg-black hover:text-[#69de10] px-2">GITHUB</a>
+         <a href="https://facebook.com/bang.syaii.sbs" target="_blank" class="hover:bg-black hover:text-[#69de10] px-2">FACEBOOK</a>
+         <a href="mailto:saipulrohman3431@gmail.com" class="hover:bg-black hover:text-[#69de10] px-2">EMAIL</a>
+         <a href="https://t.me/bang_syaii" target="_blank" class="hover:bg-black hover:text-[#69de10] px-2">TELEGRAM</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header { z-index: 100; }
+  #mobile-menu { transform: scaleY(0); }
+  #mobile-menu.is-open {
+    transform: scaleY(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+</style>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (menuToggle && mobileMenu && menuIcon && closeIcon) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('is-open');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      menuToggle.classList.toggle('bg-black');
+      menuToggle.classList.toggle('text-white');
+      menuToggle.classList.toggle('bg-white');
+      menuToggle.classList.toggle('text-black');
+    });
+  }
+</script>

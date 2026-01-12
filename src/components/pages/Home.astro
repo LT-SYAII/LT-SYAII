@@ -1,0 +1,240 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../ProjectCard.astro';
+import { getProjects } from '../../lib/db';
+import { Terminal, User, Code2, Wrench, Cpu, Globe } from 'lucide-astro';
+import { useTranslations } from '../../i18n/utils';
+import Marquee from '../Marquee.astro';
+
+export interface Props {
+  lang: 'en' | 'id';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const birthDate = new Date('2008-01-18');
+const today = new Date();
+let age = today.getFullYear() - birthDate.getFullYear();
+const monthDiff = today.getMonth() - birthDate.getMonth();
+if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+  age--;
+}
+
+const allProjects = getProjects();
+const featuredProjects = allProjects.slice(0, 3);
+
+// Updated Tech Stack: JavaScript Ecosystem Focus
+const techNames1 = ['REACT', 'NEXT.JS', 'ASTRO', 'VUE.JS', 'SVELTE', 'SOLID', 'TAILWIND', 'TYPESCRIPT'];
+const techNames2 = ['NODE.JS', 'EXPRESS', 'NESTJS', 'BUN', 'VITE', 'PRISMA', 'MONGODB', 'POSTGRESQL'];
+
+const marqueeText1 = [...techNames1, ...techNames1, ...techNames1, ...techNames1];
+const marqueeText2 = [...techNames2, ...techNames2, ...techNames2, ...techNames2];
+---
+
+<Layout
+  title="Bang_syaii - Full Stack Developer | Indonesia"
+  description={t('hero.desc')}
+  lang={lang}
+>
+  <section class="section min-h-[calc(100vh-5rem)] flex items-center justify-center relative bg-[#050505] border-b-[3px] border-white p-0">
+    <div class="container h-full flex flex-col justify-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 xl:gap-24 items-center h-full">
+        <div class="lg:col-span-7 xl:col-span-8 flex flex-col justify-center">
+          <div class="reveal-element inline-flex items-center gap-3 px-4 py-2 bg-white border-[3px] border-[#69de10] mb-8 w-fit shadow-[4px_4px_0_0_#69de10]">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full bg-black opacity-75"></span>
+              <span class="relative inline-flex h-3 w-3 bg-black"></span>
+            </span>
+            <span class="font-mono font-bold text-black uppercase tracking-wider text-sm">{t('hero.badge')}</span>
+          </div>
+          
+          <h1 class="reveal-element reveal-delay-100 font-black mb-8 text-white text-5xl md:text-7xl xl:text-8xl 2xl:text-9xl leading-none">
+            {t('hero.title.1')} <span class="text-transparent text-stroke">{t('hero.title.2')}</span><br/>
+            {t('hero.subtitle')} <span class="text-[#69de10] bg-white px-2">{t('hero.subtitle.highlight')}</span>
+          </h1>
+
+          <p class="reveal-element reveal-delay-200 text-xl md:text-2xl xl:text-3xl mb-12 text-gray-300 font-mono max-w-4xl leading-relaxed border-l-[3px] border-[#69de10] pl-6">
+            {t('hero.desc')}
+          </p>
+
+          <div class="reveal-element reveal-delay-300 flex flex-wrap gap-6">
+            <a href="/projects" class="modern-brutalist-button px-10 py-5 text-lg">
+              {t('hero.btn.view')}
+            </a>
+            <a href="/contact" class="modern-brutalist-button accent-3d px-10 py-5 text-lg">
+              {t('hero.btn.hire')}
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 xl:col-span-4 reveal-element reveal-delay-200 flex justify-center lg:justify-end">
+          <div class="modern-brutalist-card bg-[#69de10] w-full max-w-lg xl:max-w-xl">
+            <div class="bg-black p-8 xl:p-12 border-[3px] border-white flex flex-col items-center text-center h-full justify-center relative">
+              <div class="absolute top-2 left-2 w-2 h-2 bg-white rounded-full"></div>
+              <div class="absolute top-2 right-2 w-2 h-2 bg-white rounded-full"></div>
+              <div class="absolute bottom-2 left-2 w-2 h-2 bg-white rounded-full"></div>
+              <div class="absolute bottom-2 right-2 w-2 h-2 bg-white rounded-full"></div>
+
+              <div class="w-48 h-48 xl:w-64 xl:h-64 bg-black mb-8 flex items-center justify-center border-[3px] border-white shadow-[8px_8px_0_0_white]">
+                <Terminal class="w-24 h-24 xl:w-32 xl:h-32 text-[#69de10]" />
+              </div>
+              <h2 class="text-3xl xl:text-4xl font-black mb-2 text-white uppercase">Bang_syaii</h2>
+              <p class="text-[#69de10] font-mono text-sm border-[2px] border-[#69de10] px-2 py-1 mb-6">FULL STACK DEV</p>
+              
+              <div class="grid grid-cols-2 gap-4 w-full text-sm font-mono border-t-[3px] border-white pt-6">
+                <div class="text-left">
+                  <p class="text-gray-400 text-xs mb-1">LOC</p>
+                  <p class="font-bold text-white">INDONESIA</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-gray-400 text-xs mb-1">EXP</p>
+                  <p class="font-bold text-white">3+ YEARS</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section py-12 md:py-20 w-full relative z-10">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-32 items-center">
+        <div class="reveal-element flex justify-center lg:justify-start">
+          <div class="relative group w-full max-w-md">
+            <div class="absolute top-0 left-0 w-full h-full border-[3px] border-[#69de10] bg-transparent translate-x-4 translate-y-4"></div>
+            
+            <div class="relative z-10 shadow-[8px_8px_0_0_white]">
+              <div class="w-full aspect-square bg-black border-[3px] border-white overflow-hidden">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Bang syaii" 
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-110 hover:scale-100" 
+                />
+              </div>
+              
+              <div class="absolute -top-6 -left-6 bg-[#69de10] text-black font-black text-xl px-4 py-2 border-[3px] border-black shadow-[4px_4px_0_0_white] z-20 transform -rotate-2 group-hover:rotate-0 transition-transform">
+                DEV
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-element reveal-delay-200">
+          <h2 class="text-5xl md:text-7xl xl:text-8xl font-black mb-10 text-white">
+            {t('about.title')} <span class="text-transparent text-stroke">{t('about.me')}</span>
+          </h2>
+          
+          <div class="space-y-8 text-lg xl:text-2xl text-gray-300 font-mono leading-relaxed">
+            <p class="border-l-4 border-[#69de10] pl-6">
+              <span class="text-[#69de10] font-bold">{t('about.p1.title')}</span> {t('about.p1.desc')}
+            </p>
+            <p>{t('about.p2')}</p>
+          </div>
+
+          <div class="mt-16 flex gap-8 xl:gap-12">
+            <div class="bg-[#1a1a1a] border-[3px] border-white p-6 min-w-[140px] xl:min-w-[180px]">
+              <span class="block text-4xl xl:text-6xl font-black text-[#69de10]">3+</span>
+              <span class="text-sm font-mono text-white uppercase tracking-widest">{t('stats.exp')}</span>
+            </div>
+            <div class="bg-[#1a1a1a] border-[3px] border-white p-6 min-w-[140px] xl:min-w-[180px]">
+              <span class="block text-4xl xl:text-6xl font-black text-[#69de10]">10+</span>
+              <span class="text-sm font-mono text-white uppercase tracking-widest">{t('stats.proj')}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-20 xl:mt-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="modern-brutalist-card p-8 bg-black reveal-element">
+            <h3 class="text-2xl font-black mb-4 flex items-center gap-3 text-white">
+              <Code2 class="w-6 h-6 text-[#69de10]" /> {t('skills.languages')}
+            </h3>
+            <p class="text-gray-400 font-mono text-sm">JavaScript, TypeScript, Python, Java, PHP</p>
+          </div>
+          <div class="modern-brutalist-card p-8 bg-black reveal-element reveal-delay-100">
+            <h3 class="text-2xl font-black mb-4 flex items-center gap-3 text-white">
+              <Wrench class="w-6 h-6 text-[#69de10]" /> {t('skills.frameworks')}
+            </h3>
+            <p class="text-gray-400 font-mono text-sm">React, Next.js, Astro, Express, Tailwind</p>
+          </div>
+          <div class="modern-brutalist-card p-8 bg-black reveal-element reveal-delay-200">
+            <h3 class="text-2xl font-black mb-4 flex items-center gap-3 text-white">
+              <Cpu class="w-6 h-6 text-[#69de10]" /> {t('skills.tools')}
+            </h3>
+            <p class="text-gray-400 font-mono text-sm">Git, Node.js, Docker, MongoDB, SQLite</p>
+          </div>
+          <div class="modern-brutalist-card p-8 bg-black reveal-element reveal-delay-300">
+            <h3 class="text-2xl font-black mb-4 flex items-center gap-3 text-white">
+              <Globe class="w-6 h-6 text-[#69de10]" /> {t('skills.interests')}
+            </h3>
+            <p class="text-gray-400 font-mono text-sm">Open Source, Machine Learning, UI/UX Design</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section py-20 lg:py-32 bg-[#050505] w-full border-b-[3px] border-white">
+    <div class="container">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div class="reveal-element">
+          <p class="text-[#69de10] font-mono font-bold tracking-widest uppercase mb-4 text-sm bg-white/5 inline-block px-2 py-1">// Selected Works</p>
+          <h2 class="font-black tracking-tighter text-white">{t('featured.title')} <span class="text-transparent text-stroke">{t('featured.subtitle')}</span></h2>
+        </div>
+        <div class="reveal-element reveal-delay-200">
+          <a href="/projects" class="modern-brutalist-button accent-3d">
+            {t('featured.btn')}
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12">
+        {featuredProjects.map((project, index) => (
+          <div
+            key={project.id}
+            class="reveal-element"
+            style={{ transitionDelay: `${index * 150}ms` }}
+          >
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              tech={project.tech}
+              link={project.link}
+              image={project.image}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 bg-[#0f0f0f] border-y-[3px] border-white overflow-hidden w-full relative flex items-center justify-center">
+    <div class="absolute inset-0 bg-accent-secondary/5 pointer-events-none"></div>
+    <div class="reveal-element w-full">
+      <div class="flex flex-col gap-4 md:gap-12 rotate-[-2deg] scale-110 origin-center">
+        <div class="animate-marquee flex gap-12 md:gap-32 items-center whitespace-nowrap will-change-transform">
+          {marqueeText1.map((tech, index) => (
+            <div class="flex items-center gap-12 md:gap-32 group cursor-default">
+              <span class={`font-display font-black text-7xl md:text-9xl tracking-tighter ${index % 2 === 0 ? 'text-white' : 'text-stroke'} transition-all duration-300 group-hover:text-accent-secondary group-hover:text-stroke-0`}>
+                {tech}
+              </span>
+              <span class="text-5xl md:text-7xl text-accent-secondary animate-pulse">★</span>
+            </div>
+          ))}
+        </div>
+        <div class="animate-marquee-reverse flex gap-12 md:gap-32 items-center whitespace-nowrap will-change-transform">
+          {marqueeText2.map((tech, index) => (
+            <div class="flex items-center gap-12 md:gap-32 group cursor-default">
+              <span class={`font-display font-black text-7xl md:text-9xl tracking-tighter ${index % 2 !== 0 ? 'text-white' : 'text-stroke'} transition-all duration-300 group-hover:text-accent-secondary group-hover:text-stroke-0`}>
+                {tech}
+              </span>
+              <span class="text-5xl md:text-7xl text-white group-hover:text-accent-secondary">///</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,178 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+  lang?: 'en' | 'id';
+}
+
+const { 
+	title = "Bang_syaii - Full Stack Developer",
+	description = "Full Stack Developer based in Indonesia. Building robust, high-performance web applications and scalable systems with clean code.",
+	image = "/profile.jpg",
+  lang = 'en'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="author" content="Bang_syaii" />
+		<meta name="keywords" content="Full Stack Developer, Web Developer, Software Engineer, System Architect, Indonesia, Astro, React, Node.js, Backend Developer, Frontend Engineer, Portfolio, Clean Code" />
+		
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		<meta name="google-site-verification" content="MTwFZ8wIkDszF5f2Q-EsFVTFtXfu7VxDhBW2QUBYP9k" />
+
+		<meta name="theme-color" content="#050505" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="msapplication-navbutton-color" content="#050505" />
+
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="application-name" content="Bang_syaii" />
+		<meta name="apple-mobile-web-app-title" content="Bang_syaii" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+		<meta property="og:site_name" content="Bang_syaii Portfolio" />
+		<meta property="og:locale" content={lang === 'id' ? 'id_ID' : 'en_US'} />
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+		<meta property="twitter:creator" content="@bang_syaii" />
+
+		<meta name="geo.region" content="ID" />
+		<meta name="geo.placename" content="Indonesia" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="min-h-screen flex flex-col">
+			<Header lang={lang} />
+			<main class="flex-grow pt-20">
+				<slot />
+			</main>
+			<Footer />
+		</div>
+
+    <!-- GLOBAL TOAST CONTAINER -->
+    <div id="toast-container" class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4 pointer-events-none"></div>
+
+    <!-- GLOBAL CONFIRM MODAL -->
+    <div id="confirm-modal" class="fixed inset-0 z-[200] bg-black/90 hidden flex items-center justify-center backdrop-blur-sm">
+      <div class="bg-black border-[3px] border-white p-8 max-w-sm w-full shadow-[8px_8px_0_0_red] relative">
+        <h3 class="text-2xl font-black text-white mb-4 uppercase text-red-500">System Warning</h3>
+        <p id="confirm-message" class="font-mono text-white mb-8 border-l-2 border-white pl-4">Are you sure?</p>
+        <div class="flex gap-4">
+          <button id="confirm-cancel" class="flex-1 py-3 border-[2px] border-white text-white font-mono font-bold hover:bg-white hover:text-black uppercase transition-colors">Abort</button>
+          <button id="confirm-ok" class="flex-1 py-3 bg-red-600 text-white font-mono font-bold border-[2px] border-red-600 hover:bg-red-700 uppercase transition-colors">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      window.showToast = (message, type = 'success') => {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        
+        const colors = type === 'success' 
+          ? 'bg-black border-[#69de10] text-[#69de10] shadow-[4px_4px_0_0_#69de10]' 
+          : 'bg-black border-red-500 text-red-500 shadow-[4px_4px_0_0_red]';
+
+        toast.className = `p-4 border-[3px] font-mono font-bold uppercase text-sm min-w-[300px] transform translate-x-full transition-transform duration-300 pointer-events-auto ${colors}`;
+        toast.innerText = `>> ${message}`;
+
+        container.appendChild(toast);
+
+        requestAnimationFrame(() => {
+          toast.classList.remove('translate-x-full');
+        });
+
+        setTimeout(() => {
+          toast.classList.add('translate-x-full');
+          setTimeout(() => toast.remove(), 300);
+        }, 3000);
+      };
+
+      window.showConfirm = (message) => {
+        return new Promise((resolve) => {
+          const modal = document.getElementById('confirm-modal');
+          const msgEl = document.getElementById('confirm-message');
+          const btnOk = document.getElementById('confirm-ok');
+          const btnCancel = document.getElementById('confirm-cancel');
+
+          msgEl.innerText = message;
+          modal.classList.remove('hidden');
+
+          const cleanup = () => {
+            modal.classList.add('hidden');
+            btnOk.removeEventListener('click', onConfirm);
+            btnCancel.removeEventListener('click', onCancel);
+          };
+
+          const onConfirm = () => {
+            cleanup();
+            resolve(true);
+          };
+
+          const onCancel = () => {
+            cleanup();
+            resolve(false);
+          };
+
+          btnOk.addEventListener('click', onConfirm);
+          btnCancel.addEventListener('click', onCancel);
+        });
+      };
+    </script>
+
+    <script>
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); 
+          }
+        });
+      }, observerOptions);
+
+      document.addEventListener('astro:page-load', () => {
+        document.querySelectorAll('.reveal-element').forEach(el => observer.observe(el));
+      });
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.reveal-element').forEach(el => observer.observe(el));
+      });
+    </script>
+	</body>
+</html>

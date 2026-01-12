@@ -1,0 +1,52 @@
+---
+// Footer.astro
+import { Mail, Github, Send, Facebook } from 'lucide-astro';
+
+const socialLinks = [
+  { name: 'Email', href: 'mailto:saipulrohman3431@gmail.com', icon: Mail },
+  { name: 'GitHub', href: 'https://github.com/LT-SYAII', icon: Github },
+  { name: 'Telegram', href: 'https://t.me/bang_syaii', icon: Send },
+  { name: 'Facebook', href: 'https://facebook.com/bang.syaii.sbs', icon: Facebook },
+];
+---
+
+<footer class="py-20 bg-[#050505] border-t-[3px] border-white w-full">
+  <div class="container">
+    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
+      <div class="max-w-md">
+        <h3 class="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter">
+          Bang_syaii<span class="text-[#69de10]">.</span>
+        </h3>
+        <p class="text-gray-400 font-mono text-sm leading-relaxed border-l-2 border-[#69de10] pl-4">
+          Full Stack Developer building robust systems with a hard edge. Engineering pixel-perfect experiences from Indonesia to the world.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full lg:w-auto">
+        {socialLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modern-brutalist-button px-6 py-3 text-xs w-full sm:w-auto"
+            aria-label={link.name}
+          >
+            <link.icon class="w-4 h-4" /> {link.name}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-20 pt-8 border-t-[3px] border-white flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="font-mono text-xs font-bold text-gray-500 uppercase tracking-widest flex items-center gap-4">
+        <span>&copy; {new Date().getFullYear()} Bang_syaii</span>
+        <span class="hidden md:inline text-white/20">|</span>
+        <span class="hidden md:inline">SYSTEM_STATUS: ONLINE</span>
+      </div>
+      <div class="font-mono text-xs font-bold text-white uppercase tracking-widest">
+        BUILT WITH <span class="text-[#69de10]">ASTRO</span> + <span class="text-[#69de10]">TAILWIND</span>
+      </div>
+    </div>
+  </div>
+</footer>

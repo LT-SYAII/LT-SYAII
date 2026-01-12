@@ -1,0 +1,61 @@
+--- 
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../ProjectCard.astro';
+import Marquee from '../Marquee.astro';
+import { getProjects } from '../../lib/db';
+import { useTranslations } from '../../i18n/utils';
+
+export interface Props {
+  lang: 'en' | 'id';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const projects = getProjects();
+---
+
+<Layout 
+  title={lang === 'id' ? 'Proyek - Bang_syaii' : 'Projects - Bang_syaii'}
+  description={lang === 'id' 
+    ? 'Lihat portofolio proyek pengembangan web full stack saya, menampilkan sistem backend yang tangguh dan aplikasi frontend berkinerja tinggi.' 
+    : 'Showcase of full stack web development projects, featuring robust backend systems and high-performance frontend applications.'}
+  lang={lang}
+>
+  <section class="section">
+    <div class="container">
+      <div class="mb-20 reveal-element">
+        <p class="text-[#69de10] font-mono font-bold tracking-widest uppercase mb-4 text-sm bg-white/5 inline-block px-2 py-1">// {t('featured.subtitle')}</p>
+        <h1 class="font-black mb-8 tracking-tighter">{t('featured.title')} <br/> <span class="text-transparent text-stroke">Universe.</span></h1>
+        <div class="w-full h-[3px] bg-white/20 mb-8 relative overflow-hidden">
+           <div class="absolute top-0 left-0 w-1/3 h-full bg-[#69de10]"></div>
+        </div>
+        <p class="text-xl text-gray-400 font-mono max-w-2xl leading-relaxed border-l-[3px] border-[#69de10] pl-6">
+          {lang === 'id' 
+            ? 'Jelajahi koleksi proyek di mana saya mendorong batasan pengembangan web, menggabungkan desain estetis dengan fungsionalitas yang kokoh.'
+            : 'Explore a collection of projects where I\'ve pushed the boundaries of web development, combining aesthetic design with robust functionality.'}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, index) => (
+          <div
+            key={project.id}
+            class="reveal-element"
+            style={{ transitionDelay: `${index * 150}ms` }}
+          >
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              tech={project.tech}
+              link={project.link}
+              image={project.image}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Marquee />
+</Layout>

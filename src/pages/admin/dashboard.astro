@@ -1,0 +1,241 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getProjects, getStats } from '../../lib/db';
+import { Plus, Trash2, LogOut, Terminal, Activity, Server, Database, Eye, Image as ImageIcon, Code, Link as LinkIcon } from 'lucide-astro';
+
+const projects = getProjects();
+const stats = getStats();
+const currentLatency = Astro.locals.latency || 0;
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData();
+    if (data.has('logout')) {
+      Astro.cookies.delete('admin_session', { path: '/' });
+      return Astro.redirect('/admin/login');
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
+---
+
+<Layout title="System Mainframe" description="Restricted Access">
+  <section class="section min-h-screen bg-[#050505] pt-24 w-full border-b-0">
+    <div class="container">
+      
+      <div class="border-b-[3px] border-white pb-8 mb-12">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-[#69de10] text-black px-2 py-0.5 font-mono font-bold text-xs mb-2">
+              <span class="w-2 h-2 bg-black animate-pulse"></span> ONLINE
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">
+              Mainframe <span class="text-transparent text-stroke">Control</span>
+            </h1>
+          </div>
+          
+          <form method="POST">
+            <button type="submit" name="logout" class="bg-red-600 border-[3px] border-red-600 text-white font-mono font-bold px-6 py-3 hover:bg-black hover:text-red-600 transition-all flex items-center gap-2 shadow-[4px_4px_0_0_white] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+              <LogOut class="w-4 h-4" /> ABORT
+            </button>
+          </form>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-[#111] border-[2px] border-white/20 p-4 relative overflow-hidden group hover:border-[#69de10] transition-colors">
+            <Database class="w-8 h-8 text-[#69de10] mb-2 opacity-50 group-hover:opacity-100" />
+            <span class="block text-3xl font-black text-white">{stats.projects}</span>
+            <span class="text-xs font-mono text-gray-500 uppercase">Deployed Units</span>
+          </div>
+          <div class="bg-[#111] border-[2px] border-white/20 p-4 relative overflow-hidden group hover:border-[#69de10] transition-colors">
+            <Eye class="w-8 h-8 text-[#69de10] mb-2 opacity-50 group-hover:opacity-100" />
+            <span class="block text-3xl font-black text-white">{stats.views}</span>
+            <span class="text-xs font-mono text-gray-500 uppercase">Total Hits</span>
+          </div>
+          <div class="bg-[#111] border-[2px] border-white/20 p-4 relative overflow-hidden group hover:border-[#69de10] transition-colors">
+            <Server class="w-8 h-8 text-[#69de10] mb-2 opacity-50 group-hover:opacity-100" />
+            <span class="block text-3xl font-black text-white">99%</span>
+            <span class="text-xs font-mono text-gray-500 uppercase">Server Health</span>
+          </div>
+          <div class="bg-[#111] border-[2px] border-white/20 p-4 relative overflow-hidden group hover:border-[#69de10] transition-colors">
+            <Activity class="w-8 h-8 text-[#69de10] mb-2 opacity-50 group-hover:opacity-100" />
+            <span class="block text-3xl font-black text-white">{currentLatency}ms</span>
+            <span class="text-xs font-mono text-gray-500 uppercase">Latency</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-8 space-y-8">
+          <div class="bg-black border-[3px] border-white p-6 relative">
+            <div class="absolute -top-3 -left-3 bg-[#69de10] text-black px-2 font-mono text-xs font-bold border border-black">NEW_ENTRY</div>
+            <form action="/api/projects" method="POST" enctype="multipart/form-data" class="space-y-6">
+              <div class="group">
+                <label class="block mb-2 font-mono text-xs font-bold text-[#69de10] uppercase">Project Codename (Title)</label>
+                <input type="text" name="title" required class="bg-[#111] border-[2px] border-white/50 p-3 text-white font-mono text-sm focus:border-[#69de10] outline-none w-full" placeholder="PROJECT_ALPHA" />
+              </div>
+              
+              <div class="group">
+                <label class="block mb-2 font-mono text-xs font-bold text-[#69de10] uppercase">System Description</label>
+                <textarea name="description" rows="4" required class="bg-[#111] border-[2px] border-white/50 p-3 text-white font-mono text-sm focus:border-[#69de10] outline-none w-full" placeholder="High-performance e-commerce engine..."></textarea>
+              </div>
+
+              <div class="group">
+                <label class="block mb-2 font-mono text-xs font-bold text-[#69de10] uppercase">Tech Stack (CSV)</label>
+                <div class="relative">
+                  <Code class="absolute top-3 left-3 w-4 h-4 text-gray-500" />
+                  <input type="text" name="tech" required class="bg-[#111] border-[2px] border-white p-3 pl-10 text-white font-mono text-sm focus:border-[#69de10] outline-none w-full" placeholder="React, Astro, SQLite" />
+                </div>
+              </div>
+
+              <div class="group">
+                <label class="block mb-2 font-mono text-xs font-bold text-[#69de10] uppercase">Repository / Live Link</label>
+                <div class="relative">
+                  <LinkIcon class="absolute top-3 left-3 w-4 h-4 text-gray-500" />
+                  <input type="url" name="link" required class="bg-[#111] border-[2px] border-white p-3 pl-10 text-white font-mono text-sm focus:border-[#69de10] outline-none w-full" placeholder="https://github.com/..." />
+                </div>
+              </div>
+
+              <!-- Image Selector -->
+              <div class="group">
+                <label class="block mb-2 font-mono text-xs font-bold text-[#69de10] uppercase">Project Visual</label>
+                
+                <div class="flex gap-2 mb-2">
+                  <button type="button" id="btn-url" class="flex-1 py-2 text-xs font-bold border border-[#69de10] bg-[#69de10] text-black">USE URL</button>
+                  <button type="button" id="btn-upload" class="flex-1 py-2 text-xs font-bold border border-white/30 text-gray-400 hover:border-white hover:text-white">UPLOAD FILE</button>
+                </div>
+
+                <input type="hidden" name="image_type" id="image_type" value="url" />
+
+                <!-- URL Input -->
+                <div id="input-url" class="relative">
+                  <ImageIcon class="absolute top-3 left-3 w-4 h-4 text-gray-500" />
+                  <input type="url" name="image_url" class="bg-[#111] border-[2px] border-white/50 p-3 pl-10 text-white font-mono text-sm focus:border-[#69de10] outline-none w-full" placeholder="https://example.com/image.jpg" />
+                </div>
+
+                <!-- File Input -->
+                <div id="input-upload" class="relative hidden">
+                  <input type="file" name="image_file" accept="image/*" class="bg-[#111] border-[2px] border-white/50 p-2 text-white font-mono text-sm focus:border-[#69de10] outline-none w-full file:mr-4 file:py-2 file:px-4 file:border-0 file:text-xs file:font-bold file:bg-[#69de10] file:text-black hover:file:bg-white" />
+                </div>
+              </div>
+
+              <button type="submit" class="w-full bg-white text-black font-black py-4 border-[3px] border-transparent hover:border-[#69de10] hover:bg-[#69de10] hover:text-black transition-all uppercase tracking-widest shadow-[4px_4px_0_0_black]">
+                Deploy to Database
+              </button>
+            </form>
+
+          </div>
+
+          <div class="space-y-4">
+            <h2 class="font-mono text-sm text-gray-500 uppercase tracking-widest border-b border-gray-800 pb-2">Active Deployments</h2>
+            {projects.map((project) => (
+              <div class="group relative bg-[#0a0a0a] border-l-[4px] border-white/20 hover:border-[#69de10] pl-6 py-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 transition-all">
+                <div class="flex items-center gap-4 flex-grow">
+                  {project.image && (
+                    <img src={project.image} alt={project.title} class="w-16 h-16 object-cover border border-white/20 hidden md:block" />
+                  )}
+                  <div>
+                    <h3 class="text-xl font-bold text-white uppercase">{project.title}</h3>
+                    <div class="flex gap-2 mt-2">
+                      {project.tech.map((t: string) => (
+                        <span class="text-[10px] font-mono bg-white/5 px-1 text-gray-400">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <a href={project.link} target="_blank" class="text-xs font-mono text-gray-500 hover:text-white">[VIEW]</a>
+                  <button 
+                    class="delete-btn text-xs font-mono text-red-900 hover:text-red-500 uppercase"
+                    data-id={project.id}
+                  >
+                    [PURGE]
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 space-y-8">
+          <div class="bg-[#111] border-[2px] border-white/20 p-6 h-full min-h-[400px]">
+            <h3 class="font-mono text-xs font-bold text-[#69de10] mb-4 uppercase flex items-center gap-2">
+              <Terminal class="w-4 h-4" /> System Logs
+            </h3>
+            <div class="space-y-3 font-mono text-xs text-gray-500">
+              {stats.logs.length > 0 ? stats.logs.map((log: any) => (
+                <div class="border-b border-white/5 pb-2">
+                  <span class="text-gray-600 block text-[10px]">{new Date(log.timestamp).toLocaleTimeString()}</span>
+                  <span class="text-gray-300">[{log.action}]</span> {log.details}
+                </div>
+              )) : (
+                <div class="text-center italic opacity-50 pt-10">No recent activity</div>
+              )}
+              <div class="border-b border-white/5 pb-2 animate-pulse">
+                <span class="text-[#69de10]">_cursor_active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Image Tab Switcher
+  const btnUrl = document.getElementById('btn-url');
+  const btnUpload = document.getElementById('btn-upload');
+  const inputUrl = document.getElementById('input-url');
+  const inputUpload = document.getElementById('input-upload');
+  const imageType = document.getElementById('image_type') as HTMLInputElement;
+
+  if (btnUrl && btnUpload && inputUrl && inputUpload && imageType) {
+    btnUrl.addEventListener('click', () => {
+      imageType.value = 'url';
+      inputUrl.classList.remove('hidden');
+      inputUpload.classList.add('hidden');
+      
+      // Style
+      btnUrl.classList.add('bg-[#69de10]', 'text-black', 'border-[#69de10]');
+      btnUrl.classList.remove('text-gray-400', 'border-white/30');
+      btnUpload.classList.remove('bg-[#69de10]', 'text-black', 'border-[#69de10]');
+      btnUpload.classList.add('text-gray-400', 'border-white/30');
+    });
+
+    btnUpload.addEventListener('click', () => {
+      imageType.value = 'upload';
+      inputUrl.classList.add('hidden');
+      inputUpload.classList.remove('hidden');
+
+      // Style
+      btnUpload.classList.add('bg-[#69de10]', 'text-black', 'border-[#69de10]');
+      btnUpload.classList.remove('text-gray-400', 'border-white/30');
+      btnUrl.classList.remove('bg-[#69de10]', 'text-black', 'border-[#69de10]');
+      btnUrl.classList.add('text-gray-400', 'border-white/30');
+    });
+  }
+
+  // Handle Delete
+  document.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      const confirmed = await window.showConfirm('CONFIRM PURGE PROTOCOL?');
+      if (!confirmed) return;
+
+      const id = (e.currentTarget as HTMLElement).dataset.id;
+      try {
+        const res = await fetch(`/api/projects/${id}`, { method: 'DELETE' });
+        if (res.ok) {
+          window.showToast('SYSTEM PURGED SUCCESSFULLY', 'success');
+          setTimeout(() => window.location.reload(), 1000);
+        } else {
+          window.showToast('ERROR: PURGE FAILED', 'error');
+        }
+      } catch (err) {
+        console.error(err);
+        window.showToast('CRITICAL SYSTEM FAILURE', 'error');
+      }
+    });
+  });
+</script>

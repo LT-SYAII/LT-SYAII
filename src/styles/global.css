@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TOTAL NEO-BRUTALISM RESET */
+:root {
+  --bg-dark: #050505;
+  --text-primary: #ffffff;
+  --accent-primary: #69de10;
+  --border-color: #ffffff;
+  --hard-shadow-color: #69de10;
+  --hard-shadow: 6px 6px 0px 0px var(--hard-shadow-color);
+  --hard-shadow-hover: 10px 10px 0px 0px var(--border-color);
+}
+
+/* Base Styles */
+body {
+  @apply bg-[#050505] text-white font-sans antialiased;
+  /* Grid Pattern Background */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: var(--accent-primary);
+  color: black;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  @apply font-black uppercase tracking-tight;
+}
+
+h1 { @apply text-5xl md:text-7xl lg:text-9xl leading-none; }
+h2 { @apply text-3xl md:text-5xl lg:text-6xl; }
+
+@layer components {
+  /* Brutalist Card (SHARP & SOLID) */
+  .modern-brutalist-card {
+    @apply bg-[#111] border-[3px] border-white p-6 relative transition-all duration-200 ease-out;
+    box-shadow: 6px 6px 0px 0px #69de10;
+  }
+
+  .modern-brutalist-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0px 0px white;
+    @apply border-[#69de10] z-10;
+  }
+
+  /* Brutalist Button (RECTANGULAR) */
+  .modern-brutalist-button {
+    @apply bg-black border-[3px] border-[#69de10] text-[#69de10] font-black py-4 px-8 uppercase tracking-widest text-sm md:text-base inline-flex items-center justify-center gap-2 transition-all duration-150 relative;
+    box-shadow: 4px 4px 0px 0px white;
+  }
+
+  .modern-brutalist-button:hover {
+    @apply bg-[#69de10] text-black border-white;
+    box-shadow: 6px 6px 0px 0px white;
+    transform: translate(-2px, -2px);
+  }
+
+  .modern-brutalist-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px 0px white;
+  }
+
+  /* Secondary Button Variation */
+  .modern-brutalist-button.accent-3d {
+    @apply border-white text-white bg-transparent;
+    box-shadow: 4px 4px 0px 0px #69de10;
+  }
+
+  .modern-brutalist-button.accent-3d:hover {
+    @apply bg-white text-black border-[#69de10];
+    box-shadow: 6px 6px 0px 0px #69de10;
+  }
+
+  /* Brutalist Inputs */
+  input, textarea, select {
+    @apply bg-[#050505] border-[3px] border-white p-4 text-white placeholder-gray-600 w-full font-mono text-lg rounded-none focus:outline-none transition-all duration-200;
+    box-shadow: 4px 4px 0px 0px #333;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    @apply border-[#69de10] bg-[#111];
+    box-shadow: 8px 8px 0px 0px #69de10;
+    transform: translate(-2px, -2px);
+  }
+}
+
+/* Links */
+a {
+  @apply decoration-2 underline-offset-4 transition-colors duration-200 decoration-[#69de10]/50;
+}
+a:hover {
+  @apply decoration-[#69de10] text-[#69de10] bg-[#69de10]/10;
+}
+
+.modern-brutalist-button { @apply no-underline; }
+
+/* Utilities */
+.container { 
+  @apply w-full mx-auto px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-24;
+  max-width: 100%; /* Fluid width */
+}
+
+.section { 
+  @apply py-24 md:py-32 w-full border-b-[3px] border-white/10;
+  min-height: auto; 
+}
+
+@media (min-width: 1024px) {
+  .section.full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* Text Stroke */
+.text-stroke {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  transition: all 0.2s ease;
+}
+
+.text-stroke:hover, .group:hover .text-stroke {
+  -webkit-text-stroke: 0px;
+  color: #69de10;
+  text-shadow: 4px 4px 0px rgba(255,255,255,0.2);
+}
+
+/* Animations */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Marquee */
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes marquee-reverse { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+
+.animate-marquee { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+.animate-marquee-reverse { display: flex; width: max-content; animation: marquee-reverse 30s linear infinite; }
+.animate-marquee:hover, .animate-marquee-reverse:hover { animation-play-state: paused; }

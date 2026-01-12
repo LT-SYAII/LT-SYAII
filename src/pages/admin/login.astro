@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Terminal, ShieldCheck } from 'lucide-astro';
+import Marquee from '../../components/Marquee.astro';
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData();
+    const password = data.get('password');
+
+    if (password === import.meta.env.ADMIN_PASSWORD) {
+      Astro.cookies.set('admin_session', import.meta.env.SESSION_SECRET, {
+        path: '/',
+        httpOnly: true,
+        maxAge: 60 * 60 * 24,
+      });
+      return Astro.redirect('/admin/dashboard');
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+---
+
+<Layout title="System Access" description="Restricted Area">
+  <section class="min-h-screen flex flex-col justify-between bg-[#050505] relative overflow-hidden">
+    
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-10 pointer-events-none"></div>
+
+    <div class="flex-grow flex items-center justify-center p-4 relative z-10">
+      <div class="w-full max-w-md">
+        
+        <div class="mb-8 text-center">
+          <div class="inline-flex items-center gap-2 border-[2px] border-[#69de10] bg-[#69de10]/10 px-4 py-1 mb-4">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full bg-[#69de10] opacity-75"></span>
+              <span class="relative inline-flex h-3 w-3 bg-[#69de10]"></span>
+            </span>
+            <span class="font-mono text-[#69de10] text-xs font-bold tracking-widest">SECURE GATEWAY</span>
+          </div>
+          <h1 class="text-5xl font-black text-white uppercase tracking-tighter mb-2">System <span class="text-transparent text-stroke">Access</span></h1>
+        </div>
+
+        <div class="modern-brutalist-card bg-black p-8 border-[3px] border-white shadow-[12px_12px_0_0_#69de10]">
+          <div class="flex justify-center mb-8">
+            <div class="w-24 h-24 bg-[#1a1a1a] border-[3px] border-white flex items-center justify-center shadow-[4px_4px_0_0_white]">
+              <ShieldCheck class="w-12 h-12 text-[#69de10]" />
+            </div>
+          </div>
+          
+          <form method="POST" class="space-y-6">
+            <div class="group">
+              <label for="password" class="block mb-2 font-mono text-xs font-bold text-white uppercase tracking-widest flex justify-between">
+                <span>Passcode</span>
+                <span class="text-[#69de10]">REQUIRED</span>
+              </label>
+              <div class="relative">
+                <Terminal class="absolute top-4 left-4 w-5 h-5 text-gray-500" />
+                <input 
+                  type="password" 
+                  name="password" 
+                  id="password" 
+                  class="w-full p-4 pl-12 bg-[#0a0a0a] border-[3px] border-white/50 text-white font-mono text-lg focus:border-[#69de10] focus:shadow-[4px_4px_0_0_#69de10] transition-all outline-none placeholder-gray-700" 
+                  placeholder="ENTER_KEY..."
+                  required
+                  autoFocus
+                />
+              </div>
+            </div>
+            
+            <button type="submit" class="w-full bg-white text-black font-black py-4 border-[3px] border-transparent hover:border-[#69de10] hover:bg-[#69de10] hover:text-black transition-all uppercase tracking-widest text-lg shadow-[4px_4px_0_0_black] hover:shadow-[6px_6px_0_0_white] hover:translate-x-[-2px] hover:translate-y-[-2px]">
+              Authenticate
+            </button>
+          </form>
+
+          <div class="mt-8 text-center border-t-2 border-white/10 pt-4">
+            <p class="font-mono text-[10px] text-gray-500 uppercase">
+              Unauthorized access is prohibited.<br/>IP Address Logged.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="relative z-10 border-t-[3px] border-white bg-black">
+      <Marquee />
+    </div>
+
+  </section>
+</Layout>

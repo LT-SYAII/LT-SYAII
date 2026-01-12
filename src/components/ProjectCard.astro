@@ -1,0 +1,43 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  tech: string[];
+  link: string;
+  image?: string;
+}
+
+const { title, description, tech, link, image } = Astro.props;
+---
+
+<div class="modern-brutalist-card h-full flex flex-col group hover:bg-[#69de10] transition-colors duration-200 p-0 overflow-hidden">
+  {image && (
+    <div class="w-full h-48 border-b-[3px] border-white overflow-hidden relative">
+      <img 
+        src={image} 
+        alt={title} 
+        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" 
+      />
+      <div class="absolute inset-0 bg-[#69de10]/20 opacity-0 group-hover:opacity-100 transition-opacity mix-blend-overlay"></div>
+    </div>
+  )}
+  
+  <div class="p-6 flex-grow flex flex-col">
+    <h3 class="text-3xl font-black mb-4 text-white group-hover:text-black uppercase tracking-tighter transition-colors">{title}</h3>
+    <p class="text-gray-400 mb-8 font-mono text-sm leading-relaxed group-hover:text-black/80 transition-colors border-l-2 border-white/20 pl-4 group-hover:border-black/20 flex-grow">{description}</p>
+
+    <div class="flex flex-wrap gap-2 mb-8">
+      {tech.map(techItem => (
+        <span key={techItem} class="bg-[#1a1a1a] text-white border border-white px-3 py-1 text-xs font-mono font-bold uppercase group-hover:bg-black group-hover:text-[#69de10] group-hover:border-black transition-colors">
+          {techItem}
+        </span>
+      ))}
+    </div>
+    
+    <div class="mt-auto">
+      <a href={link} target="_blank" class="block w-full bg-white text-black font-black text-center py-4 border-[3px] border-white uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all shadow-[4px_4px_0_0_#69de10] group-hover:shadow-[4px_4px_0_0_black]">
+        View Project
+      </a>
+    </div>
+  </div>
+</div>

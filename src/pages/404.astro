@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { AlertTriangle, Home } from 'lucide-astro';
+
+export const prerender = true;
+---
+
+<Layout 
+  title="404 - Page Not Found" 
+  description="The page you are looking for does not exist."
+>
+  <section class="section min-h-[80vh] flex items-center justify-center">
+    <div class="container text-center">
+      <div class="reveal-element">
+        <div class="inline-block p-4 bg-white border-[3px] border-[#69de10] shadow-[8px_8px_0_0_#69de10] mb-8">
+          <AlertTriangle class="w-16 h-16 text-black" />
+        </div>
+        
+        <h1 class="font-black text-7xl md:text-9xl tracking-tighter mb-4">
+          404<span class="text-[#69de10]">.</span>
+        </h1>
+        
+        <h2 class="text-3xl md:text-5xl font-black uppercase mb-8 text-transparent text-stroke">
+          Lost in the Void
+        </h2>
+
+        <p class="text-xl md:text-2xl font-mono text-gray-400 max-w-2xl mx-auto mb-12 border-l-[3px] border-[#69de10] pl-6 py-2">
+          The coordinates you entered don't lead anywhere. The page might have been moved or deleted.
+        </p>
+
+        <a href="/" class="modern-brutalist-button px-12 py-5 text-xl">
+          <Home class="w-6 h-6" /> Back to Safety
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

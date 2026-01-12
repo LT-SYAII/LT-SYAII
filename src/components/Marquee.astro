@@ -1,0 +1,42 @@
+---
+const techNames1 = ['REACT', 'NEXT.JS', 'ASTRO', 'TAILWIND', 'TYPESCRIPT', 'JAVASCRIPT', 'HTML5', 'CSS3'];
+const techNames2 = ['NODE.JS', 'EXPRESS', 'PYTHON', 'GIT', 'DOCKER', 'SQLITE', 'MONGODB', 'LINUX'];
+
+// Duplicate for seamless loop
+const marqueeText1 = [...techNames1, ...techNames1, ...techNames1, ...techNames1]; 
+const marqueeText2 = [...techNames2, ...techNames2, ...techNames2, ...techNames2];
+---
+
+<section class="py-32 bg-[#0f0f0f] border-y-[3px] border-white overflow-hidden w-full relative flex items-center justify-center">
+  <div class="absolute inset-0 bg-accent-secondary/5 pointer-events-none"></div>
+  
+  <div class="reveal-element w-full">
+    <div class="flex flex-col gap-4 md:gap-12 rotate-[-2deg] scale-110 origin-center">
+      
+      <!-- Row 1: Frontend (Left) -->
+      <div class="animate-marquee flex gap-12 md:gap-32 items-center whitespace-nowrap will-change-transform">
+        {marqueeText1.map((tech, index) => (
+          <div class="flex items-center gap-12 md:gap-32 group cursor-default">
+            <span class={`font-display font-black text-7xl md:text-9xl tracking-tighter ${index % 2 === 0 ? 'text-white' : 'text-stroke'} transition-all duration-300 group-hover:text-[#69de10] group-hover:text-stroke-0`}>
+              {tech}
+            </span>
+            <span class="text-5xl md:text-7xl text-[#69de10] animate-pulse">★</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Row 2: Backend (Right/Reverse) -->
+      <div class="animate-marquee-reverse flex gap-12 md:gap-32 items-center whitespace-nowrap will-change-transform">
+        {marqueeText2.map((tech, index) => (
+          <div class="flex items-center gap-12 md:gap-32 group cursor-default">
+            <span class={`font-display font-black text-7xl md:text-9xl tracking-tighter ${index % 2 !== 0 ? 'text-white' : 'text-stroke'} transition-all duration-300 group-hover:text-[#69de10] group-hover:text-stroke-0`}>
+              {tech}
+            </span>
+            <span class="text-5xl md:text-7xl text-white group-hover:text-[#69de10]">///</span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
