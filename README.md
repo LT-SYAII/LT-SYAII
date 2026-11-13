@@ -4,11 +4,9 @@
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPrUax5ak4ulsFEE8HWGpCFHU3KDMLocY_q3FAkglDCA&s=10" width="220" alt="Anime illustration">
 
-[![Followers](https://img.shields.io/github/followers/LT-SYAII?style=flat&logo=github&label=Followers&color=0e75b6)](https://github.com/LT-SYAII?tab=followers)
-[![Stars](https://img.shields.io/badge/Total%20Stars-70%2B-F7DF1E?style=flat&logo=github&logoColor=white)](https://github.com/LT-SYAII?tab=repositories)
-[![Repos](https://img.shields.io/badge/Public%20Repos-21-181717?style=flat&logo=github&logoColor=white)](https://github.com/LT-SYAII?tab=repositories)
 [![Telegram](https://img.shields.io/badge/Telegram-@bang__syaii-26A5E4?style=flat&logo=telegram&logoColor=white)](https://t.me/bang_syaii)
-[![Website](https://img.shields.io/badge/Portfolio-bang.syaii.sbs-EB8E05?style=flat&logo=firefox&logoColor=white)](https://bang.syaii.sbs)
+[![Website](https://img.shields.io/badge/Portfolio-bang.syaii.sbs-EB8E05?style=flat&logo=firefox-browser&logoColor=white)](https://bang.syaii.sbs)
+[![GitHub](https://img.shields.io/badge/GitHub-LT--SYAII-181717?style=flat&logo=github&logoColor=white)](https://github.com/LT-SYAII)
 
 ```bash
 syaii@bang:~$ whoami
@@ -27,14 +25,14 @@ syaii@bang:~$ whoami
 |                   |    Name      : Syaiful Rohman (Bang Syaii)
 | > ready           |    Role      : Full Stack Developer & System Architect
 | > localhost:4321  |    Location  : Indonesia
-|                   |    Uptime   : 3+ years coding
+|                   |    Uptime    : 3+ years coding
 | $ _               |    Framework : Astro (go-to), React, Next.js, Svelte
 '-------------------'    Styling   : Tailwind CSS
-                         Language  : TypeScript, JavaScript, Go, Kotlin, Dart
+                         Language  : TypeScript, JavaScript
                          Backend   : Node.js, NestJS, Bun
                          Database  : PostgreSQL, MongoDB, Prisma
                          Infra     : Linux VPS, PM2, Cloudflare
-                         Focus     : WhatsApp bots, UMKM websites, web tools
+                         Focus     : Web apps, APIs, WhatsApp bots
                          Status    : Freelance, open for UMKM website projects
                          Contact   : t.me/bang_syaii
 ```
@@ -55,13 +53,12 @@ const syaii = {
   experience: "3+ years",
   freelance: { focus: "UMKM websites", open: true },
   favorite: "Astro",
-  alsoBuilds: ["WhatsApp bots", "Web scrapers", "Mobile apps"],
   stack: {
     frontend: ["Astro", "React", "Next.js", "Svelte", "Tailwind CSS"],
     backend: ["Node.js", "NestJS", "Bun"],
     database: ["PostgreSQL", "MongoDB", "Prisma"],
     infra: ["Linux VPS", "PM2", "Cloudflare"],
-    other: ["Go", "Kotlin", "Dart/Flutter", "Zig", "Baileys"],
+    also: ["Go", "Kotlin", "Dart/Flutter", "Zig", "Baileys"],
   },
 } as const;
 ```
@@ -100,7 +97,7 @@ const syaii = {
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-**juga dipakai di repo gw/**
+**lainnya/**
 
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
@@ -108,47 +105,9 @@ const syaii = {
 ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 ![Zig](https://img.shields.io/badge/Zig-F7A41D?style=for-the-badge&logo=zig&logoColor=white)
 
-## `$ ls ~/projects --sort=stars`
-
-Repos asli dari [github.com/LT-SYAII](https://github.com/LT-SYAII?tab=repositories) — diurutkan berdasarkan stars.
-
-<details open>
-<summary><b>⭐ Featured</b></summary>
-
-| Repo | Deskripsi | Stack | ⭐ | 🍴 |
-| --- | --- | --- | --- | --- |
-| [botwa](https://github.com/LT-SYAII/botwa) | WhatsApp bot dengan TypeScript berbasis library Baileys | TypeScript, Baileys | 26 | 13 |
-| [KaguyaBot](https://github.com/LT-SYAII/KaguyaBot) | Simple WhatsApp bot using Baileys | JavaScript, Baileys | 19 | 11 |
-| [tikio](https://github.com/LT-SYAII/tikio) | Platform unduh video/slide TikTok super cepat | Astro, API | 7 | 7 |
-| [LT-SYAII](https://github.com/LT-SYAII/LT-SYAII) | Portofolio pribadi — repo ini | Astro, TypeScript | 6 | 5 |
-
-</details>
-
-<details>
-<summary><b>🧪 Lainnya</b></summary>
-
-| Repo | Deskripsi | Stack |
-| --- | --- | --- |
-| [my-rest-api](https://github.com/LT-SYAII/my-rest-api) | REST API Node.js + MongoDB dengan auth (login & register) | Node.js, MongoDB |
-| [yuki-js](https://github.com/LT-SYAII/yuki-js) | WhatsApp bot stabil dengan banyak fitur | JavaScript |
-| [jawa-bot](https://github.com/LT-SYAII/jawa-bot) | WhatsApp bot di atas JaWa: command registry + config + virtual-thread dispatch | Java/JS hybrid |
-| [meetzone-base](https://github.com/LT-SYAII/meetzone-base) | Base awal MeetZone untuk dikembangkan lebih lanjut | JavaScript |
-| [wacaller-transcribe](https://github.com/LT-SYAII/wacaller-transcribe) | Transcribe panggilan WhatsApp real-time dengan Whisper lokal (offline) | JavaScript, Whisper |
-| [quriva-app](https://github.com/LT-SYAII/quriva-app) | Quran reader Android, offline-friendly, live dari Quran.com API | Dart, Flutter |
-| [fuwastream](https://github.com/LT-SYAII/fuwastream) | Platform streaming anime lengkap dan tanpa iklan | Kotlin |
-| [SnipCode](https://github.com/LT-SYAII/SnipCode) | Platform berbagi code untuk developer | PHP, JavaScript |
-| [Cloudflare-solver](https://github.com/LT-SYAII/Cloudflare-solver) | Bypass Cloudflare block | — |
-| [Cors](https://github.com/LT-SYAII/Cors) | CORS proxy/utility | JavaScript |
-| [holyc-compiler](https://github.com/LT-SYAII/holyc-compiler) | Compiler eksperimental HolyC | Go |
-| [ZigLink](https://github.com/LT-SYAII/ZigLink) | Project Zig | Zig, HTML |
-| [ip.json](https://github.com/LT-SYAII/ip.json) | Kumpulan IP list | JSON |
-| [Resource-pack-penglihatan-malam](https://github.com/LT-SYAII/Resource-pack-penglihatan-malam) | Resource pack Minecraft: penglihatan malam | — |
-
-</details>
-
 ## `$ how-i-build --typical`
 
-How a typical project of mine fits together, from the browser down to the server:
+How a typical project fits together, from the browser down to the server:
 
 ```mermaid
 flowchart LR
@@ -217,26 +176,28 @@ export class ProjectsController {
 </details>
 
 <details>
-<summary><b>TypeScript + Baileys</b>: WhatsApp bot command handler (ala botwa)</summary>
+<summary><b>TypeScript + Baileys</b>: WhatsApp bot command handler</summary>
 
 ```typescript
 import makeWASocket, { useMultiFileAuthState } from "@whiskeysockets/baileys";
 
-const commands = new Map<string, (msg: WAMessage, sock: WASocket) => Promise<void>>();
-
-commands.set("ping", async (_msg, sock) => {
-  await sock.sendMessage(jid, { text: "pong!" });
-});
-
 const { state, saveCreds } = await useMultiFileAuthState("session");
 const sock = makeWASocket({ auth: state });
+
+const commands = new Map<string, (jid: string, text: string) => Promise<void>>();
+commands.set("ping", async (jid) => {
+  await sock.sendMessage(jid, { text: "pong!" });
+});
 
 sock.ev.on("messages.upsert", async ({ messages }) => {
   for (const msg of messages) {
     const text = msg.message?.conversation ?? "";
-    const [cmd] = text.slice(1).trim().split(/\s+/);
+    const jid = msg.key.remoteJid;
+    if (!jid || !text.startsWith("!")) continue;
+
+    const [cmd, ...args] = text.slice(1).trim().split(/\s+/);
     const handler = commands.get(cmd);
-    if (text.startsWith("!") && handler) await handler(msg, sock);
+    if (handler) await handler(jid, args.join(" "));
   }
 });
 
@@ -322,25 +283,12 @@ pm2 save
 | Business websites | Fast, SEO-friendly sites for UMKM and personal brands |
 | Backend & APIs | REST APIs with Node.js, NestJS, and Prisma |
 | Dashboards | Admin panels and internal tools |
-| WhatsApp bots | Custom bots with Baileys — command, scraper, integrasi media |
+| WhatsApp bots | Custom bots with Baileys — command, automation, integrasi |
 | Server setup | VPS configuration, deployment, and process management |
 
 <div align="center">
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcH1jEFR_5wF-f1qJYcdllJi0_bjgt6ylaVkSvDNHldA&s=10" width="260" alt="Anime illustration">
-
-</div>
-
-## `$ github-stats --user LT-SYAII`
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=LT-SYAII&show_icons=true&theme=dracula&hide_border=true&count_private=true" height="165" alt="GitHub stats">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LT-SYAII&layout=compact&theme=dracula&hide_border=true&langs_count=8" height="165" alt="Top languages">
-
-![Streak stats](https://streak-stats.demolab.com?user=LT-SYAII&theme=dracula&hide_border=true)
-
-[![Trophy](https://github-profile-trophy.vercel.app/?username=LT-SYAII&theme=dracula&no-frame=true&row=1&column=6&margin-w=8)](https://github.com/LT-SYAII)
 
 </div>
 
