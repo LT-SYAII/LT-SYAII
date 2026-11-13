@@ -1,41 +1,31 @@
 <div align="center">
 
-# Syaiful Rohman
+# Hi, I'm Syaiful Rohman 👋
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPrUax5ak4ulsFEE8HWGpCFHU3KDMLocY_q3FAkglDCA&s=10" width="220" alt="Anime illustration">
+
+**Full Stack Developer & System Architect** dari Indonesia.  
+Biasa dipanggil **Bang Syaii**.
 
 [![Telegram](https://img.shields.io/badge/Telegram-@bang__syaii-26A5E4?style=flat&logo=telegram&logoColor=white)](https://t.me/bang_syaii)
 [![Website](https://img.shields.io/badge/Portfolio-bang.syaii.sbs-EB8E05?style=flat&logo=firefox-browser&logoColor=white)](https://bang.syaii.sbs)
 [![GitHub](https://img.shields.io/badge/GitHub-LT--SYAII-181717?style=flat&logo=github&logoColor=white)](https://github.com/LT-SYAII)
 
-```bash
-syaii@bang:~$ whoami
-> Full Stack Developer & System Architect — Indonesia
-```
-
 </div>
 
 ---
 
-## `$ neofetch`
+## Tentang Saya
 
-```
-.-------------------.    syaii@bang
-| $ bun run dev     |    ----------
-|                   |    Name      : Syaiful Rohman (Bang Syaii)
-| > ready           |    Role      : Full Stack Developer & System Architect
-| > localhost:4321  |    Location  : Indonesia
-|                   |    Uptime    : 3+ years coding
-| $ _               |    Framework : Astro (go-to), React, Next.js, Svelte
-'-------------------'    Styling   : Tailwind CSS
-                         Language  : TypeScript, JavaScript
-                         Backend   : Node.js, NestJS, Bun
-                         Database  : PostgreSQL, MongoDB, Prisma
-                         Infra     : Linux VPS, PM2, Cloudflare
-                         Focus     : Web apps, APIs, WhatsApp bots
-                         Status    : Freelance, open for UMKM website projects
-                         Contact   : t.me/bang_syaii
-```
+Halo! Saya Syaiful, seorang developer yang suka membangun produk web dari ujung ke ujung — mulai dari tampilan yang cepat dan rapi, API yang solid, sampai deployment di server sendiri.
+
+Saya sudah ngoding lebih dari 3 tahun, dan belakangan ini banyak fokus membantu **UMKM dan personal brand** punya website yang cepat, SEO-friendly, dan mudah dikelola. Di luar web, saya juga sering ngulik backend service, otomasi, dan bot WhatsApp.
+
+- 🔭 **Saat ini fokus:** website bisnis UMKM, backend/API, dan otomasi.
+- ⚡ **Framework favorit:** Astro — simpel, cepat, dan pas untuk banyak kebutuhan.
+- 🛠️ **Suka ngerjain:** web apps, dashboard, REST API, WhatsApp bot, sampai setup VPS.
+- 🌱 **Selalu eksplor:** bahasa dan tools baru (belakangan sempat main-main dengan Go, Kotlin, Flutter, dan Zig).
+- 💬 **Terbuka untuk:** proyek freelance, kolaborasi, atau sekadar ngobrol soal tech.
 
 ## `$ cat about.ts`
 
@@ -53,6 +43,7 @@ const syaii = {
   experience: "3+ years",
   freelance: { focus: "UMKM websites", open: true },
   favorite: "Astro",
+  interests: ["Web performance", "Clean APIs", "Automation", "Self-hosting"],
   stack: {
     frontend: ["Astro", "React", "Next.js", "Svelte", "Tailwind CSS"],
     backend: ["Node.js", "NestJS", "Bun"],
@@ -97,7 +88,7 @@ const syaii = {
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-**lainnya/**
+**lainnya**
 
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
@@ -107,7 +98,7 @@ const syaii = {
 
 ## `$ how-i-build --typical`
 
-How a typical project fits together, from the browser down to the server:
+Biasanya begini cara saya merangkai sebuah project, dari browser sampai server:
 
 ```mermaid
 flowchart LR
@@ -127,13 +118,15 @@ flowchart LR
 
 ## `$ cat services.txt`
 
+Hal-hal yang biasa saya kerjakan:
+
 | Service | Details |
 | --- | --- |
-| Business websites | Fast, SEO-friendly sites for UMKM and personal brands |
-| Backend & APIs | REST APIs with Node.js, NestJS, and Prisma |
-| Dashboards | Admin panels and internal tools |
-| WhatsApp bots | Custom bots with Baileys — command, automation, integrasi |
-| Server setup | VPS configuration, deployment, and process management |
+| Website bisnis | Website cepat & SEO-friendly untuk UMKM dan personal brand |
+| Backend & API | REST API dengan Node.js, NestJS, dan Prisma |
+| Dashboard | Admin panel dan internal tools |
+| WhatsApp bot | Bot custom dengan Baileys — command, automation, integrasi |
+| Server setup | Konfigurasi VPS, deployment, dan process management |
 
 <div align="center">
 
@@ -142,6 +135,8 @@ flowchart LR
 </div>
 
 ## `$ ./contact.sh`
+
+Punya ide project atau butuh diskusi? Feel free to reach out.
 
 ```bash
 telegram="t.me/bang_syaii"
@@ -152,10 +147,6 @@ website="bang.syaii.sbs"
 <div align="center">
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu4pxPcC4wjZxz1lTB4humHmtJ6HHx4e_Ia10VLSMnXA&s=10" width="240" alt="Anime illustration">
-
-</div>
-
-<div align="center">
 
 ```bash
 syaii@bang:~$ echo "Got a project in mind? Let's build it."
