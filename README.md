@@ -1,98 +1,367 @@
 <div align="center">
-  <br />
-  <a href="https://bang.syaii.sbs">
-    <img src="public/profile.jpg" alt="Bang_syaii Profile" width="150" height="150" style="border-radius: 50%; border: 4px solid #69de10;">
-  </a>
-  
-  <h1 align="center">Bang_syaii</h1>
-  <h3 align="center">Full Stack Developer | System Architect</h3>
-  
-  <p align="center">
-    <b>Scalable Web Systems Engineered for Performance.</b>
-  </p>
 
-  <p align="center">
-    System Architect focused on building the backbone of modern web applications. From designing database schemas to optimizing API response times, I ensure every system I build is scalable and secure.
-  </p>
+# Syaiful Rohman
 
-  <!-- Social Links -->
-  <p align="center">
-    <a href="https://bang.syaii.sbs">
-      <img src="https://img.shields.io/badge/Website-050505?style=for-the-badge&logo=About.me&logoColor=69de10" alt="Website" />
-    </a>
-    <a href="https://github.com/LT-SYAII">
-      <img src="https://img.shields.io/badge/GitHub-1a1a1a?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-    </a>
-    <a href="https://facebook.com/bang.syaii.sbs">
-      <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
-    </a>
-    <a href="https://t.me/bang_syaii">
-      <img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" />
-    </a>
-    <a href="mailto:saipulrohman3431@gmail.com">
-      <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-    </a>
-  </p>
-</div>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPrUax5ak4ulsFEE8HWGpCFHU3KDMLocY_q3FAkglDCA&s=10" width="220" alt="Anime illustration">
 
----
+[![Followers](https://img.shields.io/github/followers/LT-SYAII?style=flat&logo=github&label=Followers&color=0e75b6)](https://github.com/LT-SYAII?tab=followers)
+[![Stars](https://img.shields.io/badge/Total%20Stars-70%2B-F7DF1E?style=flat&logo=github&logoColor=white)](https://github.com/LT-SYAII?tab=repositories)
+[![Repos](https://img.shields.io/badge/Public%20Repos-21-181717?style=flat&logo=github&logoColor=white)](https://github.com/LT-SYAII?tab=repositories)
+[![Telegram](https://img.shields.io/badge/Telegram-@bang__syaii-26A5E4?style=flat&logo=telegram&logoColor=white)](https://t.me/bang_syaii)
+[![Website](https://img.shields.io/badge/Portfolio-bang.syaii.sbs-EB8E05?style=flat&logo=firefox&logoColor=white)](https://bang.syaii.sbs)
 
-### 👨‍💻 About Me
-
-**Hello, World!** 👋
-
-I'm a passionate Full Stack Developer based in Indonesia. My journey in tech started with a curiosity for how things work, which quickly evolved into an obsession with building them.
-
-I believe in the perfect balance between **brutal aesthetics** and **robust engineering**. No nonsense, just pure code. My goal is to solve complex technical problems with simple, elegant solutions that drive business growth.
-
-*   📍 **Location:** Indonesia
-*   💼 **Experience:** 3+ Years
-*   🛠️ **Focus:** 99% Uptime & Clean Codebase
-*   🎯 **Philosophy:** "Code is Poetry, Systems are Art."
-
----
-
-### 🛠️ Tech Arsenal
-
-<div align="center">
-
-| **Frontend** | **Backend** | **Tools & Database** |
-| :--- | :--- | :--- |
-| ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) | ![NodeJS](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) | ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) |
-| ![NextJS](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white) | ![Express](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white) | ![Bun](https://img.shields.io/badge/Bun-000000?style=flat-square&logo=bun&logoColor=white) |
-| ![Astro](https://img.shields.io/badge/Astro-BC52EE?style=flat-square&logo=astro&logoColor=white) | ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white) | ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white) |
-| ![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) | ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) | ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white) |
-| ![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=flat-square&logo=svelte&logoColor=white) | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white) | ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) |
+```bash
+syaii@bang:~$ whoami
+> Full Stack Developer & System Architect — Indonesia
+```
 
 </div>
 
 ---
 
-### 🚀 About This Repository
+## `$ neofetch`
 
-This repository hosts my personal portfolio website, which is actually a **Dynamic Web Application** powered by Astro and Node.js.
+```
+.-------------------.    syaii@bang
+| $ bun run dev     |    ----------
+|                   |    Name      : Syaiful Rohman (Bang Syaii)
+| > ready           |    Role      : Full Stack Developer & System Architect
+| > localhost:4321  |    Location  : Indonesia
+|                   |    Uptime   : 3+ years coding
+| $ _               |    Framework : Astro (go-to), React, Next.js, Svelte
+'-------------------'    Styling   : Tailwind CSS
+                         Language  : TypeScript, JavaScript, Go, Kotlin, Dart
+                         Backend   : Node.js, NestJS, Bun
+                         Database  : PostgreSQL, MongoDB, Prisma
+                         Infra     : Linux VPS, PM2, Cloudflare
+                         Focus     : WhatsApp bots, UMKM websites, web tools
+                         Status    : Freelance, open for UMKM website projects
+                         Contact   : t.me/bang_syaii
+```
 
-**Key Features:**
-*   🎨 **Neo-Brutalist UI:** Sharp edges, high contrast, and bold typography.
-*   🌍 **i18n Support:** Fully localized in English and Indonesian.
-*   🔐 **Admin Dashboard:** Built-in CMS to manage projects without touching code.
-*   📊 **Analytics:** Real-time visit tracking and server latency monitoring.
-*   🖼️ **Image Handling:** Supports both external URLs and local file uploads.
+## `$ cat about.ts`
 
-*(Check out `GUIDE.md` to learn how to deploy this template for yourself!)*
+<table>
+<tr>
+<td width="240" align="center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU5uQi10KpXGl8VTMStG_aCzqyGgOQ5bdB8q4r79Oasg&s=10" width="220" alt="Anime illustration"></td>
+<td>
 
+```typescript
+const syaii = {
+  name: "Syaiful Rohman",
+  alias: "Bang Syaii",
+  roles: ["Full Stack Developer", "System Architect"],
+  location: "Indonesia",
+  experience: "3+ years",
+  freelance: { focus: "UMKM websites", open: true },
+  favorite: "Astro",
+  alsoBuilds: ["WhatsApp bots", "Web scrapers", "Mobile apps"],
+  stack: {
+    frontend: ["Astro", "React", "Next.js", "Svelte", "Tailwind CSS"],
+    backend: ["Node.js", "NestJS", "Bun"],
+    database: ["PostgreSQL", "MongoDB", "Prisma"],
+    infra: ["Linux VPS", "PM2", "Cloudflare"],
+    other: ["Go", "Kotlin", "Dart/Flutter", "Zig", "Baileys"],
+  },
+} as const;
+```
+
+</td>
+</tr>
+</table>
+
+## `$ ls ~/stack`
+
+**frontend/**
+
+![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+
+**backend/**
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
+![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white)
+
+**database/**
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+
+**infra/**
+
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![PM2](https://img.shields.io/badge/PM2-2B037A?style=for-the-badge&logo=pm2&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+**juga dipakai di repo gw/**
+
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![Zig](https://img.shields.io/badge/Zig-F7A41D?style=for-the-badge&logo=zig&logoColor=white)
+
+## `$ ls ~/projects --sort=stars`
+
+Repos asli dari [github.com/LT-SYAII](https://github.com/LT-SYAII?tab=repositories) — diurutkan berdasarkan stars.
+
+<details open>
+<summary><b>⭐ Featured</b></summary>
+
+| Repo | Deskripsi | Stack | ⭐ | 🍴 |
+| --- | --- | --- | --- | --- |
+| [botwa](https://github.com/LT-SYAII/botwa) | WhatsApp bot dengan TypeScript berbasis library Baileys | TypeScript, Baileys | 26 | 13 |
+| [KaguyaBot](https://github.com/LT-SYAII/KaguyaBot) | Simple WhatsApp bot using Baileys | JavaScript, Baileys | 19 | 11 |
+| [tikio](https://github.com/LT-SYAII/tikio) | Platform unduh video/slide TikTok super cepat | Astro, API | 7 | 7 |
+| [LT-SYAII](https://github.com/LT-SYAII/LT-SYAII) | Portofolio pribadi — repo ini | Astro, TypeScript | 6 | 5 |
+
+</details>
+
+<details>
+<summary><b>🧪 Lainnya</b></summary>
+
+| Repo | Deskripsi | Stack |
+| --- | --- | --- |
+| [my-rest-api](https://github.com/LT-SYAII/my-rest-api) | REST API Node.js + MongoDB dengan auth (login & register) | Node.js, MongoDB |
+| [yuki-js](https://github.com/LT-SYAII/yuki-js) | WhatsApp bot stabil dengan banyak fitur | JavaScript |
+| [jawa-bot](https://github.com/LT-SYAII/jawa-bot) | WhatsApp bot di atas JaWa: command registry + config + virtual-thread dispatch | Java/JS hybrid |
+| [meetzone-base](https://github.com/LT-SYAII/meetzone-base) | Base awal MeetZone untuk dikembangkan lebih lanjut | JavaScript |
+| [wacaller-transcribe](https://github.com/LT-SYAII/wacaller-transcribe) | Transcribe panggilan WhatsApp real-time dengan Whisper lokal (offline) | JavaScript, Whisper |
+| [quriva-app](https://github.com/LT-SYAII/quriva-app) | Quran reader Android, offline-friendly, live dari Quran.com API | Dart, Flutter |
+| [fuwastream](https://github.com/LT-SYAII/fuwastream) | Platform streaming anime lengkap dan tanpa iklan | Kotlin |
+| [SnipCode](https://github.com/LT-SYAII/SnipCode) | Platform berbagi code untuk developer | PHP, JavaScript |
+| [Cloudflare-solver](https://github.com/LT-SYAII/Cloudflare-solver) | Bypass Cloudflare block | — |
+| [Cors](https://github.com/LT-SYAII/Cors) | CORS proxy/utility | JavaScript |
+| [holyc-compiler](https://github.com/LT-SYAII/holyc-compiler) | Compiler eksperimental HolyC | Go |
+| [ZigLink](https://github.com/LT-SYAII/ZigLink) | Project Zig | Zig, HTML |
+| [ip.json](https://github.com/LT-SYAII/ip.json) | Kumpulan IP list | JSON |
+| [Resource-pack-penglihatan-malam](https://github.com/LT-SYAII/Resource-pack-penglihatan-malam) | Resource pack Minecraft: penglihatan malam | — |
+
+</details>
+
+## `$ how-i-build --typical`
+
+How a typical project of mine fits together, from the browser down to the server:
+
+```mermaid
+flowchart LR
+  U([Visitor]) --> CF[Cloudflare]
+  CF --> VPS[Linux VPS]
+  VPS --> FE["Frontend<br/>Astro / Next.js / Svelte"]
+  VPS --> API["API<br/>NestJS / Node.js / Bun"]
+  VPS --> BOT["WhatsApp Bot<br/>Baileys + TypeScript"]
+  FE --> API
+  API --> ORM[Prisma]
+  BOT --> ORM
+  ORM --> DB[("PostgreSQL / MongoDB")]
+  PM2{{PM2}} -. manages .-> API
+  PM2 -. manages .-> FE
+  PM2 -. manages .-> BOT
+```
+
+## `$ cat code-samples/*`
+
+A few snippets in the languages I write most. Open the ones you want to read.
+
+<details>
+<summary><b>Astro</b>: pages and components (my default for sites)</summary>
+
+```astro
+---
+// src/pages/index.astro
+import Layout from "../layouts/Layout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+
+const services = [
+  { title: "Business Website", desc: "Fast and SEO-friendly" },
+  { title: "Dashboard", desc: "Admin panels and internal tools" },
+];
 ---
 
-### 📬 Get in Touch
+<Layout title="Studio">
+  <section class="grid gap-6 md:grid-cols-2">
+    {services.map((service) => <ServiceCard {...service} />)}
+  </section>
+</Layout>
+```
 
-Open for software engineering collaborations, full stack development, or technical consultations.
+</details>
 
-*   **Email:** [saipulrohman3431@gmail.com](mailto:saipulrohman3431@gmail.com)
-*   **Telegram:** [@bang_syaii](https://t.me/bang_syaii)
-*   **Facebook:** [@bang.syaii.sbs](https://facebook.com/bang.syaii.sbs)
+<details>
+<summary><b>TypeScript + NestJS</b>: controllers and DTOs</summary>
 
----
+```typescript
+@Controller("projects")
+export class ProjectsController {
+  constructor(private readonly projects: ProjectsService) {}
+
+  @Get()
+  findAll(@Query("take") take = "10") {
+    return this.projects.findAll(Number(take));
+  }
+
+  @Post()
+  create(@Body() dto: CreateProjectDto) {
+    return this.projects.create(dto);
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><b>TypeScript + Baileys</b>: WhatsApp bot command handler (ala botwa)</summary>
+
+```typescript
+import makeWASocket, { useMultiFileAuthState } from "@whiskeysockets/baileys";
+
+const commands = new Map<string, (msg: WAMessage, sock: WASocket) => Promise<void>>();
+
+commands.set("ping", async (_msg, sock) => {
+  await sock.sendMessage(jid, { text: "pong!" });
+});
+
+const { state, saveCreds } = await useMultiFileAuthState("session");
+const sock = makeWASocket({ auth: state });
+
+sock.ev.on("messages.upsert", async ({ messages }) => {
+  for (const msg of messages) {
+    const text = msg.message?.conversation ?? "";
+    const [cmd] = text.slice(1).trim().split(/\s+/);
+    const handler = commands.get(cmd);
+    if (text.startsWith("!") && handler) await handler(msg, sock);
+  }
+});
+
+sock.ev.on("creds.update", saveCreds);
+```
+
+</details>
+
+<details>
+<summary><b>Prisma</b>: schema design</summary>
+
+```prisma
+model Client {
+  id        String    @id @default(cuid())
+  name      String
+  projects  Project[]
+  createdAt DateTime  @default(now())
+}
+
+model Project {
+  id       String @id @default(cuid())
+  title    String
+  clientId String
+  client   Client @relation(fields: [clientId], references: [id])
+}
+```
+
+</details>
+
+<details>
+<summary><b>Svelte</b>: reactive components</summary>
+
+```svelte
+<script lang="ts">
+  let count = $state(0);
+  let doubled = $derived(count * 2);
+</script>
+
+<button onclick={() => count++}>
+  Clicked {count} times (doubled: {doubled})
+</button>
+```
+
+</details>
+
+<details>
+<summary><b>Bun</b>: a tiny HTTP server</summary>
+
+```typescript
+Bun.serve({
+  port: 3000,
+  fetch(req) {
+    const { pathname } = new URL(req.url);
+    if (pathname === "/health") return Response.json({ status: "ok" });
+    return new Response("Not found", { status: 404 });
+  },
+});
+```
+
+</details>
+
+<details>
+<summary><b>Bash + PM2</b>: deploying to my VPS</summary>
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+git pull --ff-only
+bun install --frozen-lockfile
+bun run build
+
+pm2 startOrReload ecosystem.config.cjs --env production
+pm2 save
+```
+
+</details>
+
+## `$ cat services.txt`
+
+| Service | Details |
+| --- | --- |
+| Business websites | Fast, SEO-friendly sites for UMKM and personal brands |
+| Backend & APIs | REST APIs with Node.js, NestJS, and Prisma |
+| Dashboards | Admin panels and internal tools |
+| WhatsApp bots | Custom bots with Baileys — command, scraper, integrasi media |
+| Server setup | VPS configuration, deployment, and process management |
 
 <div align="center">
-  <small>System Status: <b>Online</b> | Last Updated: 2026</small>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcH1jEFR_5wF-f1qJYcdllJi0_bjgt6ylaVkSvDNHldA&s=10" width="260" alt="Anime illustration">
+
+</div>
+
+## `$ github-stats --user LT-SYAII`
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=LT-SYAII&show_icons=true&theme=dracula&hide_border=true&count_private=true" height="165" alt="GitHub stats">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LT-SYAII&layout=compact&theme=dracula&hide_border=true&langs_count=8" height="165" alt="Top languages">
+
+![Streak stats](https://streak-stats.demolab.com?user=LT-SYAII&theme=dracula&hide_border=true)
+
+[![Trophy](https://github-profile-trophy.vercel.app/?username=LT-SYAII&theme=dracula&no-frame=true&row=1&column=6&margin-w=8)](https://github.com/LT-SYAII)
+
+</div>
+
+## `$ ./contact.sh`
+
+```bash
+telegram="t.me/bang_syaii"
+github="github.com/LT-SYAII"
+website="bang.syaii.sbs"
+```
+
+<div align="center">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu4pxPcC4wjZxz1lTB4humHmtJ6HHx4e_Ia10VLSMnXA&s=10" width="240" alt="Anime illustration">
+
+</div>
+
+<div align="center">
+
+```bash
+syaii@bang:~$ echo "Got a project in mind? Let's build it."
+```
+
 </div>
